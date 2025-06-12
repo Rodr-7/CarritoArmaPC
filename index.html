@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--sirve para controlar cómo se muestra la página en dispositivos móviles. Específicamente, ajusta el ancho de la página al ancho de la pantalla del dispositivo y establece el nivel de zoom inicial en 1.0. Esto ayuda a que el diseño sea responsivo y se vea bien en celulares y tablets. -->
+    <a> <link rel="stylesheet" href="style.css"></a>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <title>Carrito de compras</title>
+</head>
+<body>
+    <main>
+        <div id="productos"></div> <!-- Zona para seleccionar y agregar productos al carrito -->
+            <h1>Arma tu PC</h1>
+            <h2>Componentes</h2>
+            <label for="placa-madre">Placa madre:</label><br>
+            <select id="placa-madre">
+                <option value="+">ASRock B450M Pro4 </option> <!-- gamma baja -->
+                <option value="-">MSI B550M PRO-VDH WiFi </option> <!-- gamma media-baja -->
+                <option value="*">Gigabyte B660M DS3H DDR4</option> <!-- gamma media -->
+                <option value="/">ASUS TUF Gaming B760-PLUS WIFI D4</option> <!-- gamma media-alta -->
+                <option value="/">MSI MAG X670E TOMAHAWK WIFI</option> <!-- gamma alta -->
+                <option value="/">ASUS ROG Strix Z790-E Gaming WiFi </option> <!-- gamma alta -->
+                <option value="/">ASRock Z790 Taichi Carrara</option> <!-- gamma premium ;)-->
+            </select><br>
+
+            <label for="procesador">Procesador:</label><br>
+            <select id="procesador">
+                <option value="+">Intel i3</option>
+                <option value="-">Intel i5</option>
+                <option value="*">Intel i7</option>
+                <option value="/">Intel i9</option>
+            </select><br>
+
+            <label for="ram">Cantidad de memoria RAM:</label><br>
+            <select id="ram">
+                <option value="+">4 GB</option>
+                <option value="-">8 GB</option>
+                <option value="*">12 GB</option>
+                <option value="/">16 GB</option>
+                <option value="/">24 GB</option>
+                <option value="/">32 GB</option>
+                <option value="/">64 GB</option>
+            </select><br>
+
+            <label for="grafica">Tarjeta grafica:</label>
+            <select id="grafica">
+                <option value="+">NVIDIA GeForce GTX 1650 </option> <!-- gamma baja -->
+                <option value="-">AMD Radeon RX 6500 XT </option> <!-- gamma baja -->
+                <option value="*">NVIDIA GeForce RTX 3050</option> <!-- gamma media -->
+                <option value="/">AMD Radeon RX 6600 XT</option> <!-- gamma media -->
+                <option value="/">VIDIA GeForce RTX 4070 </option> <!-- gamma alta -->
+                <option value="/">AMD Radeon RX 7900 XT</option> <!-- gamma alta -->
+                <option value="/">NVIDIA GeForce RTX 4090 </option> <!-- gamma ultra-->
+            </select><br>
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+ <!-- Zona para formulario de datos cliente -->
+<div id="formulario">
+    <h2>Datos del cliente</h2>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Ingresa tu email">
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" placeholder="Ingresa tu dirección">
+</div>
+
+
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+ <!-- Zona para caalculo del precio total a pagar por el carrito -->
+        <div id="calculo">
+            <h2>Valor Total</h2>
+            <input type="number" id="num1" placeholder="Primera cifra"</input>
+            <label for="operacion">Operación:</label>
+            <select id="operacion">
+                <option value="+">Suma</option>
+                <option value="-">Resta</option>
+                <option value="*">Multiplicación</option>
+                <option value="/">División</option>
+            </select>
+            <input type="number" id="num2" placeholder="Segunda cifra"</input>
+            <button onclick="calcular('num1', 'operacion','num2')">Calcular</button>
+            <p id="resultado">""</p>
+        </div>
+    </main>
+
+<script src="script.js"></script> <!-- Para que el archivo script.js esté bien enlazado en el HTML se debe usar la etiqueta <script src="script.js"></script> justo antes de cerrar el body, no usar la etiqueta a para enlazar scripts.-->
+</body>
+</html>

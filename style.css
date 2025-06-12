@@ -1,0 +1,12 @@
+h1 {font-family: "Orbitron";
+    font-size: 250%;}
+h2 {font-family: "Calibri";}
+body {
+    background-color: linear-gradient(to right, #0beb0b, rgb(0, 0, 255));
+    align-items: center;
+    display: flex;
+    flex-direction: column; /* estos 3 parametros logran centrar el coneido*/
+    max-width: 20%;
+}
+
+#operacion {width: 10%;}
