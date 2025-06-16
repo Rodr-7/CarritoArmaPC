@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--sirve para controlar cómo se muestra la página en dispositivos móviles. Específicamente, ajusta el ancho de la página al ancho de la pantalla del dispositivo y establece el nivel de zoom inicial en 1.0. Esto ayuda a que el diseño sea responsivo y se vea bien en celulares y tablets. -->
     <a> <link rel="stylesheet" href="style.css"></a>
+    <link rel="icon" type="image/png" href="computer(1).png">  <!--Link al favicon -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
@@ -57,7 +58,7 @@
 
 <!-- ------------------------------------------------------------------------------------------------ -->
  <!-- Zona para formulario de datos cliente -->
-<div id="formulario">
+<form id="Formulario">
     <h2>Datos del cliente</h2>
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" placeholder="Ingresa tu nombre">
@@ -65,7 +66,13 @@
     <input type="email" id="email" placeholder="Ingresa tu email">
     <label for="direccion">Dirección:</label>
     <input type="text" id="direccion" placeholder="Ingresa tu dirección">
-</div>
+    <div id="EmailValid"></div> <!-- Div para mostrar mensajes de validación -->
+    <div id="NombreValid"></div> <!-- Div para mostrar mensajes de validación -->
+    <div id="DireccionValid"></div> <!-- Div para mostrar mensajes de validación -->
+
+    <button type="submit">Registrar</button> <!-- Botón para enviar el formulario -->
+    <!--La propiedad `type="submit"` se utiliza en `<button>` o `<input>` dentro de formularios. Su función principal es indicar que, al hacer clic en ese botón, se debe enviar el formulario al servidor para su procesamiento. Cuando un usuario presiona un botón con este atributo, el navegador recopila todos los datos ingresados en los campos del formulario y realiza una solicitud HTTP (por defecto, de tipo POST o GET según el atributo `method` del formulario).-->
+</form>
 
 
 
@@ -73,7 +80,7 @@
  <!-- Zona para caalculo del precio total a pagar por el carrito -->
         <div id="calculo">
             <h2>Valor Total</h2>
-            <input type="number" id="num1" placeholder="Primera cifra"</input>
+            <input type="number" id="num1" placeholder="Primera cifra"></input>
             <label for="operacion">Operación:</label>
             <select id="operacion">
                 <option value="+">Suma</option>
@@ -81,7 +88,7 @@
                 <option value="*">Multiplicación</option>
                 <option value="/">División</option>
             </select>
-            <input type="number" id="num2" placeholder="Segunda cifra"</input>
+            <input type="number" id="num2" placeholder="Segunda cifra"></input>
             <button onclick="calcular('num1', 'operacion','num2')">Calcular</button>
             <p id="resultado">""</p>
         </div>
