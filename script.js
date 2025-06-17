@@ -1,20 +1,22 @@
-function calcular() {
-    var num1 = parseFloat(document.getElementById("num1").value);
-    var operacion = document.getElementById("operacion").value;
-    var num2 = parseFloat(document.getElementById("num2").value);
-    var resultado;
-    if (operacion === "+") {
-        resultado = num1 + num2;
-    } else if (operacion === "-") {
-        resultado = num1 - num2;
-    } else if (operacion === "*") {
-        resultado = num1 * num2;
-    } else if (operacion === "/") {
-        resultado = num1 / num2;
-    } else {
-    }
-    document.getElementById("resultado").innerHTML = "El resultado es: " + resultado;
+
+function calcularTotal() {
+  let total = 0;
+
+  // Obtener cada select por su id
+  const selectPlaca = document.getElementById("placa-madre");
+  const selectProcesador = document.getElementById("procesador");
+  const selectRam = document.getElementById("ram");
+  const selectGrafica = document.getElementById("grafica");
+
+  // Suma el precio de la opción seleccionada en cada select
+  total += precios[selectPlaca.value] || 0;
+  total += precios[selectProcesador.value] || 0;
+  total += precios[selectRam.value] || 0;
+  total += precios[selectGrafica.value] || 0;
+
+  document.getElementById("resultado").textContent = "Total: $" + total;
 }
+
 
 function ValidaNombre(nombre) {
   const regex = /^(?=.*[a-zA-Z])[a-zA-Z\s]+$/;
