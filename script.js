@@ -3,20 +3,54 @@ function calcularTotal() {
   let total = 0;
 
   // Obtener cada select por su id
-  const selectPlaca = document.getElementById("placa-madre");
-  const selectProcesador = document.getElementById("procesador");
-  const selectRam = document.getElementById("ram");
-  const selectGrafica = document.getElementById("grafica");
+  const selectPlaca = Number(document.getElementById("placa-madre").value);
+  const selectProcesador = Number(document.getElementById("procesador").value);
+  const selectRam = Number(document.getElementById("ram").value);
+  const selectGrafica = Number(document.getElementById("grafica").value);
 
   // Suma el precio de la opción seleccionada en cada select
-  total += precios[selectPlaca.value] || 0;
-  total += precios[selectProcesador.value] || 0;
-  total += precios[selectRam.value] || 0;
-  total += precios[selectGrafica.value] || 0;
+  total = selectPlaca + selectProcesador + selectRam + selectGrafica;
 
   document.getElementById("resultado").textContent = "Total: $" + total;
 }
 
+//------------- Calculo de precio ----------------------------------------
+const selectPlaca = document.getElementById('placa-madre');
+const selectProcesador = document.getElementById('procesador');
+const selectRam = document.getElementById('ram');
+const selectGrafica = document.getElementById('grafica');
+
+// Agregar un evento 'change' a cada select para recalcular el total al cambiar la selección
+const selects = document.querySelectorAll('.componente');// Todos los selects que tienen la clase "componente"
+
+
+selectPlaca.addEventListener('change', function(event) {
+  // Código a ejecutar cuando cambia la selección
+  calcularTotal();
+  console.log('Nuevo valor:', event.target.value);
+});
+
+selectProcesador.addEventListener('change', function(event) {
+  // Código a ejecutar cuando cambia la selección
+  calcularTotal();
+  console.log('Nuevo valor:', event.target.value);
+});
+
+selectRam.addEventListener('change', function(event) {
+  // Código a ejecutar cuando cambia la selección
+  calcularTotal();
+  console.log('Nuevo valor:', event.target.value);
+});
+
+selectGrafica.addEventListener('change', function(event) {
+  // Código a ejecutar cuando cambia la selección
+  calcularTotal();
+  console.log('Nuevo valor:', event.target.value);
+});
+
+//-------------------------------------------------------------------------------------
+//------------- Validaciones --------------------------------------------------
+//------------- Validacion de nombre -----------------
 
 function ValidaNombre(nombre) {
   const regex = /^(?=.*[a-zA-Z])[a-zA-Z\s]+$/;
@@ -33,12 +67,12 @@ function ValidaNombre(nombre) {
 - El $ indica el final de la cadena.*/
 }
 
+//------------- Validacion de email -----------------
 function ValidaEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; /*constante que almacena la expresión regular para validar el formato del correo electrónico*/
   return regex.test(email);
 }
 
-//------------- Validacion de email -----------------
   // Código que se ejecuta cuando se envía el formulario
 document.getElementById('Formulario').addEventListener('submit', function(event) { //El evento 'submit' ocurre cuando el usuario intenta enviar el formulario (por ejemplo, al hacer clic en un botón de tipo submit).
 
