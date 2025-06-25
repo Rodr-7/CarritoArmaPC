@@ -90,6 +90,7 @@ const direccion = document.getElementById('direccion').value; // Obtiene el valo
 const validNombre = document.getElementById('NombreValid');   // Obtiene el elemento donde se mostrará el mensaje
 const validEmail = document.getElementById('EmailValid');   // Obtiene el elemento donde se mostrará el mensaje
 const validDireccion = document.getElementById('DireccionValid');   // Obtiene el elemento donde se mostrará el mensaje
+const boton = document.getElementById('botonCarrito');
 
 
 if (ValidaEmail(email)) { // Si el email es válido
@@ -115,6 +116,11 @@ if (ValidaDireccion(direccion)) {
     validDireccion.textContent = "Direccion inválida"; // Muestra mensaje de error para nombre
     validDireccion.style.color = "red";            // Cambia el color del mensaje a rojo
 }
+
+if (ValidaEmail(email) && ValidaNombre(nombre) && ValidaDireccion(direccion)) {
+    boton.style.display = "inline-block";
+}
+
 
 });
 
