@@ -90,8 +90,13 @@ const direccion = document.getElementById('direccion').value; // Obtiene el valo
 const validNombre = document.getElementById('NombreValid');   // Obtiene el elemento donde se mostrará el mensaje
 const validEmail = document.getElementById('EmailValid');   // Obtiene el elemento donde se mostrará el mensaje
 const validDireccion = document.getElementById('DireccionValid');   // Obtiene el elemento donde se mostrará el mensaje
-const boton = document.getElementById('botonCarrito');
 
+  const placa = document.getElementById('placa-madre').value;
+  const procesador = document.getElementById('procesador').value;
+  const ram = document.getElementById('ram').value;
+  const grafica = document.getElementById('grafica').value;
+  
+  const boton = document.getElementById('botonCarrito');
 
 if (ValidaEmail(email)) { // Si el email es válido
     validEmail.textContent = "Email válido";   // Muestra mensaje de éxito para email
@@ -117,9 +122,11 @@ if (ValidaDireccion(direccion)) {
     validDireccion.style.color = "red";            // Cambia el color del mensaje a rojo
 }
 
-if (ValidaEmail(email) && ValidaNombre(nombre) && ValidaDireccion(direccion)) {
+  if (placa !== "0" && procesador !== "0" && ram !== "0" && grafica !== "0" && ValidaEmail(email) && ValidaNombre(nombre) && ValidaDireccion(direccion)) {
     boton.style.display = "inline-block";
-}
+  } else {
+    boton.style.display = "none";
+  }
 
 
 });
